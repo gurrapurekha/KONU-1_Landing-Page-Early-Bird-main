@@ -400,7 +400,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <input type="text" style="display:none;" name="xmIwtLD" value="40acd5158992fadd8f76b634dbaa684a539acd30d483aded3d29b7a4d9aa1e11b9ca33ce087aff08a342d4eb18f918e2">
           <input type="text" style="display:none;" name="actionType" value="TGVhZHM=">
           <input type="text" style="display:none;" name="returnURL" value="https://konu-landing-page-early-bird-main-o945qbc76.vercel.app/thankyou.html">
-
           <!-- Row 1 – Name (First Name only, Last Name kept hidden for Zoho but pre-filled) -->
           <div class="zcwf_row">
             <div class="zcwf_col_lab"><label for="First_Name">First Name <span style="color:#F0006E;">*</span></label></div>
@@ -570,8 +569,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           sf.setAttribute('name','service'); wf.appendChild(sf);
         }
         document.querySelector('#konu-zoho-form .formsubmit').setAttribute('disabled', true);
-        // Redirect directly to thank you page after short delay
+        // Submit to Zoho via iframe, GTM event, then redirect to thankyou
+        gtmPush('lead_form_submit','Lead Form — Request Callback');
         setTimeout(function(){ window.location.href = 'thankyou.html'; }, 800);
+        return true;
       }
       if (typeof _wfa_fstprtcken == 'undefined') { _wfa_fstprtcken = {}; }
       _wfa_fstprtcken[1320106000002192006] = true;
