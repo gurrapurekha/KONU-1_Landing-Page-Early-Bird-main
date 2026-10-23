@@ -381,6 +381,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           method="POST"
           onsubmit="javascript:document.charset='UTF-8'; return checkMandatory1320106000002192006()"
           accept-charset="UTF-8"
+          target="zoho_iframe_target"
         >
           <!-- Do not remove these — required by Zoho -->
           <input type="text" style="display:none;" name="xnQsjsdp" value="5e3278cd15b471ca99b71bc9c5a88bf878ae25a7ce1abd81bcd4fddf8257be5a">
@@ -483,6 +484,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div><!-- /konu-zoho-form -->
     </div><!-- /bg-white card -->
 
+    <!-- Hidden iframe to catch Zoho response — user goes to thankyou.html directly -->
+    <iframe name="zoho_iframe_target" style="display:none;"></iframe>
+
     <!-- Zoho Analytics Tracking — do not remove -->
     <script id="wf_anal" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=6acd93fe2de839884a8c0269dda177e2fab5d25868eb5175904376b468815cb6d3facebd577dbf1ba4ffa6e094897f0fgidbe27fdb9db66570979e04a1883206f45d0e1df36e784fd8b5cb8cffb2213574agid4b789520364090aea39d002653c72ba990fa230e706df435a3e0273110e6c46dgida2ba5746e1618dfd92a85f4ef667e2deb63924c9931c6ca12e9dd8f8c2f5db2c&tw=e2a9a19f2462217d05b2baee5b78307f4df7dee3c31e1ae8f86c2411aa2ffb67&version=v2"></script>
 
@@ -555,6 +559,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           sf.setAttribute('name','service'); wf.appendChild(sf);
         }
         document.querySelector('#konu-zoho-form .formsubmit').setAttribute('disabled', true);
+        // Redirect directly to thank you page after short delay
+        setTimeout(function(){ window.location.href = 'thankyou.html'; }, 800);
       }
       if (typeof _wfa_fstprtcken == 'undefined') { _wfa_fstprtcken = {}; }
       _wfa_fstprtcken[1320106000002192006] = true;
