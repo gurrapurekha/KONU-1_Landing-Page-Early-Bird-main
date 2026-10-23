@@ -405,14 +405,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="zcwf_row">
               <div class="zcwf_col_lab"><label for="Phone">WhatsApp / Mobile <span style="color:#F0006E;">*</span></label></div>
               <div class="zcwf_col_fld">
-                <input type="text" id="Phone" name="Phone" placeholder="+91 98765 43210" maxlength="30" autocomplete="tel" aria-required="true">
+                <input type="tel" id="Phone" name="Phone" placeholder="+91 98765 43210" maxlength="15" autocomplete="tel" aria-required="true" pattern="[0-9+\s\-()]{7,15}" inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9+\s\-()]/g,'')">
                 <div class="zcwf_col_help"></div>
               </div>
             </div>
             <div class="zcwf_row">
               <div class="zcwf_col_lab"><label for="Email">Email Address <span style="color:#F0006E;">*</span></label></div>
               <div class="zcwf_col_fld">
-                <input type="text" ftype="email" id="Email" name="Email" placeholder="you@example.com" maxlength="100" autocomplete="email" aria-required="true">
+                <input type="email" ftype="email" id="Email" name="Email" placeholder="you@example.com" maxlength="100" autocomplete="email" aria-required="true">
                 <div class="zcwf_col_help"></div>
               </div>
             </div>
@@ -428,9 +428,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div>
             </div>
             <div class="zcwf_row">
-              <div class="zcwf_col_lab"><label for="LEADCF127">Property Type</label></div>
+              <div class="zcwf_col_lab"><label for="LEADCF127">Property Type <span style="color:#F0006E;">*</span></label></div>
               <div class="zcwf_col_fld">
-                <select class="zcwf_col_fld_slt" id="LEADCF127" name="LEADCF127" onchange="addAriaSelected1320106000002192006()">
+                <select class="zcwf_col_fld_slt" id="LEADCF127" name="LEADCF127" onchange="addAriaSelected1320106000002192006()" aria-required="true">
                   <option value="-None-">Select type…</option>
                   <option value="Vacant Plot/Land">Vacant Plot / Land</option>
                   <option value="Residential Villa / House">Residential Villa / House</option>
@@ -515,21 +515,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         var ln = document.getElementById('Last_Name');
         if (fn && ln) ln.value = fn.value || '.';
 
-        var mnd = ['First Name', 'Phone', 'Email', 'LEADCF124', 'LEADCF125'];
-        var lbl = ['First Name', 'WhatsApp / Mobile', 'Email Address', 'Property Location', 'Property Size'];
-        for (var i = 0; i < mnd.length; i++) {
-          var f = document.forms['WebToLeads1320106000002192006'][mnd[i]];
-          if (f) {
-            if (f.value.replace(/^\s+|\s+$/g,'').length == 0) {
-              alert(lbl[i] + ' cannot be empty.'); f.focus(); return false;
-            } else if (f.nodeName == 'SELECT' && f.options[f.selectedIndex].value == '-None-') {
-              alert(lbl[i] + ' cannot be none.'); f.focus(); return false;
-            } else if (f.type == 'checkbox' && !f.checked) {
-              alert('Please accept ' + lbl[i]); f.focus(); return false;
-            }
-          }
-        }
-        if (!validateEmail1320106000002192006()) return false;
+        var form = document.forms['WebToLeads1320106000002192006'];
+
+        // 1. First Name
+        var firstName = fn ? fn.value.replace(/^\s+|\s+$/g,'') : '';
+        if (!firstName) { alert('First Name cannot be empty.'); fn.focus(); return false; }
+
+        // 2. Phone — numbers only
+        var phoneEl = document.getElementById('Phone');
+        var phoneVal = phoneEl ? phoneEl.value.replace(/^\s+|\s+$/g,'') : '';
+        if (!phoneVal) { alert('WhatsApp / Mobile cannot be empty.'); phoneEl.focus(); return false; }
+        if (!/^[0-9+\s\-()]{7,15}$/.test(phoneVal)) { alert('Please enter a valid mobile number (digits only).'); phoneEl.focus(); return false; }
+
+        // 3. Email — valid format
+        var emailEl = document.getElementById('Email');
+        var emailVal = emailEl ? emailEl.value.replace(/^\s+|\s+$/g,'') : '';
+        if (!emailVal) { alert('Email Address cannot be empty.'); emailEl.focus(); return false; }
+        var atpos = emailVal.indexOf('@'), dotpos = emailVal.lastIndexOf('.');
+        if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) { alert('Please enter a valid email address.'); emailEl.focus(); return false; }
+
+        // 4. Property Location
+        var locEl = document.getElementById('LEADCF124');
+        var locVal = locEl ? locEl.value.replace(/^\s+|\s+$/g,'') : '';
+        if (!locVal) { alert('Property Location cannot be empty.'); locEl.focus(); return false; }
+
+        // 5. Property Type
+        var typeEl = document.getElementById('LEADCF127');
+        if (typeEl && typeEl.options[typeEl.selectedIndex].value == '-None-') { alert('Please select a Property Type.'); typeEl.focus(); return false; }
+
+        // 6. Property Size
+        var sizeEl = document.getElementById('LEADCF125');
+        if (sizeEl && sizeEl.options[sizeEl.selectedIndex].value == '-None-') { alert('Please select a Property Size.'); sizeEl.focus(); return false; }
+
         var p = new URLSearchParams(window.location.search);
         if (p.has('service') && p.get('service') === 'smarturl') {
           var wf = document.getElementById('webform1320106000002192006');
