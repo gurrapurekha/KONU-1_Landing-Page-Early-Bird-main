@@ -189,6 +189,222 @@
     </div>
   </main>
 
+  <!-- Zoho CRM Form Section -->
+  <section class="relative z-10 py-12 px-4">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-8">
+        <h2 class="text-xl sm:text-2xl font-extrabold text-white tracking-tight">Refer a friend or add another property</h2>
+        <p class="mt-2 text-xs text-white/50">Fill in the details below and we'll get in touch.</p>
+      </div>
+
+      <style>
+        #ty-zoho-form { padding: 2rem; font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; }
+        #ty-zoho-form .zcwf_title { display: none; }
+        #ty-zoho-form .zcwf_row { margin: 0 0 1rem 0; }
+        #ty-zoho-form .zcwf_col_lab { width: 100%; float: none; padding: 0 0 0.35rem 0; margin: 0; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #fff; }
+        #ty-zoho-form .zcwf_col_fld { width: 100%; float: none; padding: 0; margin: 0; }
+        #ty-zoho-form .zcwf_col_fld input[type=text],
+        #ty-zoho-form .zcwf_col_fld input[type=tel],
+        #ty-zoho-form .zcwf_col_fld input[type=email],
+        #ty-zoho-form .zcwf_col_fld textarea { width: 100%; box-sizing: border-box; float: none; border: 1px solid rgba(255,255,255,0.15) !important; border-radius: 0.5rem; padding: 0.75rem 1rem; font-size: 0.875rem; color: #fff; font-family: inherit; background: rgba(255,255,255,0.07); transition: border-color 0.15s; }
+        #ty-zoho-form .zcwf_col_fld input:focus,
+        #ty-zoho-form .zcwf_col_fld textarea:focus { outline: none; border-color: #F0006E !important; box-shadow: 0 0 0 3px rgba(240,0,110,0.2); }
+        #ty-zoho-form .zcwf_col_fld_slt { width: 100%; box-sizing: border-box; border: 1px solid rgba(255,255,255,0.15) !important; border-radius: 0.5rem; padding: 0.75rem 1rem; font-size: 0.875rem; color: #fff; font-family: inherit; background: rgba(255,255,255,0.07); float: none; appearance: none; }
+        #ty-zoho-form .zcwf_col_fld_slt:focus { outline: none; border-color: #F0006E !important; }
+        #ty-zoho-form .zcwf_col_fld_slt option { background: #0A0F1E; color: #fff; }
+        #ty-zoho-form select[multiple].zcwf_col_fld_slt { height: auto; min-height: 120px; }
+        #ty-zoho-form .zcwf_col_help { display: none; }
+        #ty-zoho-form input[type=submit].formsubmit { width: 100%; padding: 0.9rem 1.5rem; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 0.75rem; background: #F0006E !important; color: #fff !important; border: none !important; cursor: pointer; box-shadow: 0 8px 24px rgba(240,0,110,0.3); transition: background 0.2s, transform 0.15s; font-family: inherit; }
+        #ty-zoho-form input[type=submit].formsubmit:hover { background: #CC0060 !important; transform: translateY(-1px); }
+        #ty-zoho-form input[type=reset] { display: none; }
+        #ty-zoho-form input::placeholder,
+        #ty-zoho-form textarea::placeholder { color: rgba(255,255,255,0.3); }
+        @media (min-width: 600px) {
+          #ty-zoho-form .ty-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+          #ty-zoho-form .ty-grid-2 .zcwf_row { margin-bottom: 0; }
+        }
+      </style>
+
+      <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+        <div id="ty-zoho-form">
+          <form
+            id="webform1320106000002192006ty"
+            action="https://crm.zoho.in/crm/WebToLeadForm"
+            name="WebToLeads1320106000002192006"
+            method="POST"
+            onsubmit="javascript:document.charset='UTF-8'; return checkMandatoryTY1320106000002192006()"
+            accept-charset="UTF-8"
+            target="zoho_ty_iframe"
+          >
+            <!-- Do not remove these hidden fields -->
+            <input type="text" style="display:none;" name="xnQsjsdp" value="5e3278cd15b471ca99b71bc9c5a88bf878ae25a7ce1abd81bcd4fddf8257be5a">
+            <input type="hidden" name="zc_gad" id="zc_gad_ty" value="">
+            <input type="text" style="display:none;" name="xmIwtLD" value="40acd5158992fadd8f76b634dbaa684a539acd30d483aded3d29b7a4d9aa1e11b9ca33ce087aff08a342d4eb18f918e2">
+            <input type="text" style="display:none;" name="actionType" value="TGVhZHM=">
+            <input type="text" style="display:none;" name="returnURL" value="https://konu-landing-page-early-bird-main-o945qbc76.vercel.app/thankyou.html">
+
+            <!-- First Name + Last Name -->
+            <div class="ty-grid-2">
+              <div class="zcwf_row">
+                <div class="zcwf_col_lab"><label for="First_Name_ty">First Name <span style="color:#F0006E;">*</span></label></div>
+                <div class="zcwf_col_fld"><input type="text" id="First_Name_ty" name="First Name" placeholder="e.g. Rajesh" maxlength="40" autocomplete="given-name"><div class="zcwf_col_help"></div></div>
+              </div>
+              <div class="zcwf_row">
+                <div class="zcwf_col_lab"><label for="Last_Name_ty">Last Name <span style="color:#F0006E;">*</span></label></div>
+                <div class="zcwf_col_fld"><input type="text" id="Last_Name_ty" name="Last Name" placeholder="e.g. Sharma" maxlength="80" autocomplete="family-name"><div class="zcwf_col_help"></div></div>
+              </div>
+            </div>
+
+            <!-- Phone + Email -->
+            <div class="ty-grid-2">
+              <div class="zcwf_row">
+                <div class="zcwf_col_lab"><label for="Phone_ty">Phone</label></div>
+                <div class="zcwf_col_fld"><input type="tel" id="Phone_ty" name="Phone" placeholder="+91 98765 43210" maxlength="15" inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9+\s\-()]/g,'')"><div class="zcwf_col_help"></div></div>
+              </div>
+              <div class="zcwf_row">
+                <div class="zcwf_col_lab"><label for="Email_ty">Email</label></div>
+                <div class="zcwf_col_fld"><input type="email" ftype="email" id="Email_ty" name="Email" placeholder="you@example.com" maxlength="100"><div class="zcwf_col_help"></div></div>
+              </div>
+            </div>
+
+            <!-- Location + Property Type -->
+            <div class="ty-grid-2">
+              <div class="zcwf_row">
+                <div class="zcwf_col_lab"><label for="LEADCF124_ty">Property Location</label></div>
+                <div class="zcwf_col_fld"><input type="text" id="LEADCF124_ty" name="LEADCF124" placeholder="e.g. Kompally, Hyderabad" maxlength="255"><div class="zcwf_col_help"></div></div>
+              </div>
+              <div class="zcwf_row">
+                <div class="zcwf_col_lab"><label for="LEADCF127_ty">Property Type</label></div>
+                <div class="zcwf_col_fld">
+                  <select class="zcwf_col_fld_slt" id="LEADCF127_ty" name="LEADCF127" onchange="addAriaSelectedTY()">
+                    <option value="-None-">Select type…</option>
+                    <option value="Vacant Plot/Land">Vacant Plot/Land</option>
+                    <option value="Residential Villa / House">Residential Villa / House</option>
+                    <option value="Agriculture / Farm Land">Agriculture / Farm Land</option>
+                    <option value="Gated Community Plot">Gated Community Plot</option>
+                    <option value="Commercial Property">Commercial Property</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  <div class="zcwf_col_help"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Property Size -->
+            <div class="zcwf_row">
+              <div class="zcwf_col_lab"><label for="LEADCF125_ty">Property Size</label></div>
+              <div class="zcwf_col_fld">
+                <select class="zcwf_col_fld_slt" id="LEADCF125_ty" name="LEADCF125" onchange="addAriaSelectedTY()">
+                  <option value="-None-">Select size…</option>
+                  <option value="Under 500 Sq.Yds.">Under 500 Sq.Yds.</option>
+                  <option value="500-1,000 Sq. Yds.">500-1,000 Sq. Yds.</option>
+                  <option value="1,000 Sq. Yds. to 1 Acre">1,000 Sq. Yds. to 1 Acre</option>
+                  <option value="Above 1 Acre">Above 1 Acre</option>
+                  <option value="Not Sure">Not Sure</option>
+                </select>
+                <div class="zcwf_col_help"></div>
+              </div>
+            </div>
+
+            <!-- I'm interested in -->
+            <div class="zcwf_row">
+              <div class="zcwf_col_lab"><label for="LEADCF123_ty">I'm interested in… <span style="font-weight:400;text-transform:none;font-size:0.65rem;color:rgba(255,255,255,0.4);">(hold Ctrl/Cmd for multiple)</span></label></div>
+              <div class="zcwf_col_fld">
+                <select class="zcwf_col_fld_slt" id="LEADCF123_ty" name="LEADCF123" onchange="addAriaSelectedTY()" multiple>
+                  <option value="Regular Property Monitoring">Regular Property Monitoring</option>
+                  <option value="Maintenance &amp; Cleanup">Maintenance &amp; Cleanup</option>
+                  <option value="Market Valuation Insights">Market Valuation Insights</option>
+                  <option value="Photo &amp; Audit Reports">Photo &amp; Audit Reports</option>
+                  <option value="Legal &amp; Document Checks">Legal &amp; Document Checks</option>
+                  <option value="Emergency / Urgent Checks">Emergency / Urgent Checks</option>
+                </select>
+                <div class="zcwf_col_help"></div>
+              </div>
+            </div>
+
+            <!-- How did you hear -->
+            <div class="zcwf_row">
+              <div class="zcwf_col_lab"><label for="LEADCF126_ty">How did you hear about KONU?</label></div>
+              <div class="zcwf_col_fld">
+                <select class="zcwf_col_fld_slt" id="LEADCF126_ty" name="LEADCF126" onchange="addAriaSelectedTY()">
+                  <option value="-None-">Select…</option>
+                  <option value="Facebook/Instagram Ad">Facebook/Instagram Ad</option>
+                  <option value="Google Ad">Google Ad</option>
+                  <option value="Friend/Family Referral">Friend/Family Referral</option>
+                  <option value="WhatsApp">WhatsApp</option>
+                  <option value="YouTube">YouTube</option>
+                  <option value="Other">Other</option>
+                </select>
+                <div class="zcwf_col_help"></div>
+              </div>
+            </div>
+
+            <!-- Notes -->
+            <div class="zcwf_row">
+              <div class="zcwf_col_lab"><label for="LEADCF122_ty">Anything else you'd like us to know?</label></div>
+              <div class="zcwf_col_fld">
+                <textarea id="LEADCF122_ty" name="LEADCF122" rows="3" placeholder="Optional…" style="resize:vertical;"></textarea>
+                <div class="zcwf_col_help"></div>
+              </div>
+            </div>
+
+            <!-- Honeypot -->
+            <input type="text" style="display:none;" name="aG9uZXlwb3Q" value="">
+
+            <!-- Submit -->
+            <div class="zcwf_row" style="margin-top:1.5rem;">
+              <div class="zcwf_col_fld" style="width:100%;float:none;padding:0;">
+                <input type="submit" id="formsubmit_ty" class="formsubmit zcwf_button" value="Submit" aria-label="Submit">
+              </div>
+            </div>
+
+            <p style="text-align:center;font-size:0.7rem;color:rgba(255,255,255,0.3);margin-top:1rem;">By submitting you agree to be contacted by the KONU team.</p>
+
+          </form>
+        </div>
+      </div>
+
+      <!-- Hidden iframe for Zoho -->
+      <iframe name="zoho_ty_iframe" style="display:none;"></iframe>
+
+      <!-- Zoho Analytics Tracking — do not remove -->
+      <script id="wf_anal_ty" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=e145a0d49b8594fe48c3f9edb69d4e11921637c62db9f6622813e23de30523ffe2c3cb86d914659cb1b7453556f00ef4gid8a2f9351dfecdbf5223f18d7c6951d05206be693ea7fd2638089d17a275c625fgideeaf41a0a1cc74abaca923ed9ba7724835b3ddc4d6cbc9ef94e7153c576aa740gid924803a564fa8011c07937ab3d51a8ce7ff6ac5b99a815f4ce2a13996debb3ab&tw=acad11ef717a52b0eb9d23470b764210ae2fbbab2bfcca54ec596625728ef3ab&version=v2"></script>
+
+      <!-- Zoho form scripts -->
+      <script>
+        function addAriaSelectedTY(){
+          var el = event.target;
+          var prev = el.querySelector('[aria-selected=true]');
+          if (prev) prev.removeAttribute('aria-selected');
+          el.querySelectorAll('option')[el.selectedIndex].ariaSelected = 'true';
+        }
+        function checkMandatoryTY1320106000002192006(){
+          var fn = document.getElementById('First_Name_ty');
+          var ln = document.getElementById('Last_Name_ty');
+          if (!fn.value.trim()) { alert('First Name cannot be empty.'); fn.focus(); return false; }
+          if (!ln.value.trim()) { alert('Last Name cannot be empty.'); ln.focus(); return false; }
+          var em = document.getElementById('Email_ty');
+          if (em.value.trim()) {
+            var at = em.value.indexOf('@'), dot = em.value.lastIndexOf('.');
+            if (at < 1 || dot < at + 2 || dot + 2 >= em.value.length) { alert('Please enter a valid email address.'); em.focus(); return false; }
+          }
+          var p = new URLSearchParams(window.location.search);
+          if (p.has('service') && p.get('service') === 'smarturl') {
+            var wf = document.getElementById('webform1320106000002192006ty');
+            var sf = document.createElement('input');
+            sf.setAttribute('type','hidden'); sf.setAttribute('value', p.get('service')); sf.setAttribute('name','service');
+            wf.appendChild(sf);
+          }
+          document.getElementById('formsubmit_ty').setAttribute('disabled', true);
+          return true;
+        }
+        if (typeof _wfa_fstprtcken === 'undefined') { _wfa_fstprtcken = {}; }
+        _wfa_fstprtcken[1320106000002192006] = true;
+      </script>
+
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="relative z-10 border-t border-white/5 py-6">
     <p class="text-center text-[11px] text-white/20 font-medium">
